@@ -1,0 +1,28 @@
+{
+  "name": "unisharp/laravel-widgetify",
+  "description": "help render partial view with laravel.",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "partial",
+    "view",
+    "widget",
+    "render"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Unisharp Ltd.",
+      "email": "service@unisharp.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "illuminate/support": ">=5.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Unisharp\\Widget\\": "src/"
+    }
+  }
+}
