@@ -18,6 +18,12 @@
         Unisharp\Widget\WidgetServiceProvider::class,
     ```
 
+    class aliases :
+
+    ```php
+        'Widget' => Unisharp\Widget\WidgetFacade::class,
+    ```
+
 1. publish config file
 
     ```

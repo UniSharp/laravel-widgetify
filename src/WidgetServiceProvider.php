@@ -22,4 +22,18 @@ class WidgetServiceProvider extends ServiceProvider {
         ], 'widget_config');
 
     }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->bind('Widget', function () {
+            return new Widget;
+        });
+
+        $this->app->bind('\Unisharp\Widget\WidgetInterface', '\Unisharp\Widget\Widget');
+    }
 }
