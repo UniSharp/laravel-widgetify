@@ -2,7 +2,7 @@
 
 return [
     'calendar' => [
-        'groups' => ['page', 'event'],
+        'groups' => ['page', 'date'],
         'render' => '\App\Widget@calendar',
     ],
     

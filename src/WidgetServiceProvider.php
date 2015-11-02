@@ -21,6 +21,9 @@ class WidgetServiceProvider extends ServiceProvider
             __DIR__ . '/config/widget.php' => config_path('widget.php', 'config'),
         ], 'widget_config');
 
+        $this->publishes([
+            __DIR__ . '/example/Widget.php' => base_path('app/Widget.php'),
+        ], 'widget_example');
     }
 
     /**

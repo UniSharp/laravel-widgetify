@@ -24,10 +24,11 @@
         'Widget' => Unisharp\Widget\WidgetFacade::class,
     ```
 
-1. publish config file
+1. publish config file and demo class
 
     ```php
         php artisan vendor:publish --tag=widget_config
+        php artisan vendor:publish --tag=widget_example
     ```
 
 ## Config
@@ -36,7 +37,7 @@ In `config/widget.php`, set every widget you need, and remember to implement you
 
 ```php
     'calendar' => [                          // widget name
-        'groups' => ['page', 'event'],       // widget's group name
+        'groups' => ['page', 'date'],       // widget's group name
         'render' => '\App\Widget@calendar',  // where your render function is
     ],
     
@@ -52,7 +53,7 @@ In `config/widget.php`, set every widget you need, and remember to implement you
     Widget::all();
     // get all widgets
 
-    Widget::getByGroup('date');
+    Widget::getByGroup('page');
     // get widgets belonging to the group
     // accept single variable or array
 
