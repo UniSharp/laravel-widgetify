@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Unisharp\Widget;
 
@@ -8,8 +8,8 @@ use Illuminate\Support\ServiceProvider;
  * Class FileapiServiceProvider
  * @package Unisharp\Fileapi
  */
-class WidgetServiceProvider extends ServiceProvider {
-
+class WidgetServiceProvider extends ServiceProvider
+{
     /**
      * Bootstrap the application services.
      *
