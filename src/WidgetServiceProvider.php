@@ -22,7 +22,7 @@ class WidgetServiceProvider extends ServiceProvider
         ], 'widget_config');
 
         $this->publishes([
-            __DIR__ . '/example/Widget.php' => base_path('app/Widget.php'),
+            __DIR__ . '/example/ExampleWidget.php' => base_path('app/Widgets/ExampleWidget.php'),
         ], 'widget_example');
     }
 

@@ -31,22 +31,6 @@
         php artisan vendor:publish --tag=widget_example
     ```
 
-## Config
-
-In `config/widget.php`, set every widget you need, and remember to implement your method
-
-```php
-    'calendar' => [                          // widget name
-        'groups' => ['page', 'date'],       // widget's group name
-        'render' => '\App\Widget@calendar',  // where your render function is
-    ],
-    
-    'quote' => [                             // another widget
-        'groups' => ['page'],
-        'render' => '\App\Widget@quote',
-    ]
-```
-
 ## Usage
 
 ```php
@@ -64,4 +48,16 @@ In `config/widget.php`, set every widget you need, and remember to implement you
     Widget::getWithVar(['calendar' => [4, 6], 'quote' => [8]]);
     // get widget by name and pass variables
     // accept only array
+
+    Widget::set('side', ['class' => 'class_name', $data = []]);
+    // set widgets with position
+
+    Widget::random('side', $number = 3);
+    // set a random widget with position
+```
+
+in view :
+
+```html
+    {!! d('widget.side') !!}
 ```

@@ -4,6 +4,46 @@ namespace Unisharp\Widget;
 
 class Widget
 {
+    // private $vars = [];
+
+    private $inc = null;
+
+    // public function __destruct()
+    // {
+    //     $this->render();
+    // }
+
+    // public function setVar($args = [])
+    // {
+    //     $this->vars = $args;
+
+    //     return $this;
+    // }
+
+    public function get($widget_name, $args = [])
+    {
+        $func_name = ucfirst($widget_name);
+
+        $inc = "\App\Widgets\\$func_name";
+
+        $this->inc = $inc;
+
+        $obj = new $this->inc;
+
+        $var = call_user_func_array([$obj, 'getData'], $args);
+
+        return view($obj->view)->with($var);
+    }
+
+    // public function render()
+    // {
+    //     $inc = new $this->inc;
+
+    //     $var = call_user_func_array([$inc, 'getData'], $this->vars);
+
+    //     return view($inc->view)->with($var);
+    // }
+
     public function all()
     {
         $arr_widgets = [];
@@ -75,6 +115,12 @@ class Widget
         }
 
         return $arr_widgets;
+    }
+
+
+    public function setVars()
+    {
+        return true;
     }
 
 
