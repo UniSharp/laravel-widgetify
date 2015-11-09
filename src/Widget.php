@@ -20,19 +20,40 @@ class Widget
     //     return $this;
     // }
 
-    public function get($widget_name, $args = [])
+    public function init($position)
+    {
+        \Session::forget('widget.' . $position);
+    }
+
+    public function get($position)
+    {
+        $arr_widgets = \Cache::store('array')->get('widget.' . $position);
+
+        foreach ($arr_widgets as $key => $value) {
+            if (is_null($value)) {
+                throw new Exception("Widget '$key' not found!");
+            }
+            echo $value;
+        }
+    }
+
+    public function set($position, $widget_name, $args = [])
     {
         $func_name = ucfirst($widget_name);
 
         $inc = "\App\Widgets\\$func_name";
 
-        $this->inc = $inc;
-
-        $obj = new $this->inc;
+        $obj = new $inc;
 
         $var = call_user_func_array([$obj, 'getData'], $args);
 
-        return view($obj->view)->with($var);
+        $widget = view($obj->view)->with($var);
+
+        $arr_widgets = \Cache::store('array')->get('widget.' . $position) ?: [];
+
+        array_push($arr_widgets, $widget);
+
+        \Cache::store('array')->forever('widget.' . $position, $arr_widgets);
     }
 
     // public function render()
