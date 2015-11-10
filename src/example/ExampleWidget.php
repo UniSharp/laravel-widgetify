@@ -6,12 +6,12 @@ use Unisharp\Widget\WidgetInterface;
 
 class ExampleWidget implements WidgetInterface
 {
-	public $view = null;
+    public $view = null;
 
-	public $groups = [];
+    public $groups = [];
 
-	public function getData()
-	{
-		return true;
-	}
+    public function getData()
+    {
+        return true;
+    }
 }
