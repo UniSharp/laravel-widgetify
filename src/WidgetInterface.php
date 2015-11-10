@@ -4,5 +4,5 @@ namespace Unisharp\Widget;
 
 interface WidgetInterface
 {
-	public function getData();
+	public function getData($args);
 }
