@@ -24,40 +24,36 @@
         'Widget' => Unisharp\Widget\WidgetFacade::class,
     ```
 
-1. publish config file and demo class
+1. publish widget template class
 
     ```php
-        php artisan vendor:publish --tag=widget_config
         php artisan vendor:publish --tag=widget_example
     ```
 
 ## Usage
 
 ```php
-    Widget::all();
-    // get all widgets
-
-    Widget::getByGroup('page');
-    // get widgets belonging to the group
-    // accept single variable or array
-
-    Widget::getByName('calendar');
-    // get widget by widget name
-    // accept single variable or array
-
-    Widget::getWithVar(['calendar' => [4, 6], 'quote' => [8]]);
-    // get widget by name and pass variables
-    // accept only array
-
     Widget::set('side', ['class' => 'class_name', $data = []]);
     // set widgets with position
 
-    Widget::random('side', $number = 3);
-    // set a random widget with position
+    Widget::get('side');
+    // get all widgets of a position
 ```
 
-in view :
+## Example
 
-```html
-    {!! d('widget.side') !!}
-```
+1. in controller :
+
+    ```php
+        \Widget::set('side', 'block', ['alias' => 'side_top_html']);
+        \Widget::set('side', 'facebook');
+        \Widget::set('side', 'block', ['alias' => 'side_mid_html']);
+        \Widget::set('side', 'subs');
+        \Widget::set('side', 'block', ['alias' => 'side_buttom_html']);
+    ```
+
+2. in view :
+
+    ```html
+        {!! \Widget::get('side') !!}
+    ```
