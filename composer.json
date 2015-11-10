@@ -1,6 +1,6 @@
 {
   "name": "unisharp/laravel-widgetify",
-  "description": "help render partial view with laravel.",
+  "description": "help dealing with data in partial view with laravel.",
   "type": "library",
   "keywords": [
     "laravel",

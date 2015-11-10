@@ -33,7 +33,7 @@
 ## Usage
 
 ```php
-    Widget::set('side', ['class' => 'class_name', $data = []]);
+    Widget::set('side', 'widget-class-name', $args = []]);
     // set widgets with position
 
     Widget::get('side');
@@ -48,7 +48,7 @@
         \Widget::set('side', 'block', ['alias' => 'side_top_html']);
         \Widget::set('side', 'facebook');
         \Widget::set('side', 'block', ['alias' => 'side_mid_html']);
-        \Widget::set('side', 'subs');
+        \Widget::set('side', 'subscription');
         \Widget::set('side', 'block', ['alias' => 'side_buttom_html']);
     ```
 

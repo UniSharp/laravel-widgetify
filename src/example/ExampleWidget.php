@@ -8,8 +8,6 @@ class ExampleWidget implements WidgetInterface
 {
     public $view = null;
 
-    public $groups = [];
-
     public function getData()
     {
         return true;
